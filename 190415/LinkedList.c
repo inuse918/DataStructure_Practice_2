@@ -9,7 +9,8 @@ int main(void)
 		struct node *link;
 	};
 
-	struct node *p;
+	struct node *p,*del;
+	
 	p = (struct node *)malloc(sizeof(struct node));
 	p->data = 'A';
 	p->link = (struct node *)malloc(sizeof(struct node));
@@ -18,12 +19,14 @@ int main(void)
 	p->link->link->data = 'C';
 	p->link->link->link = NULL;
 
+	del = p;
 	while (p != NULL)
 	{
 		printf("%c\n", p->data);
 		p = p->link;
+		free(del);
+		del = p;
 	}
-
 	return 0;
 
 }
