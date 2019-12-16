@@ -20,7 +20,7 @@ void Repermutation(int a[], int r, int n) {
 	if (r == R) Reper();
 	else for (i = 0; i < n; i++) {
 		Swap(&a[0], &a[i]);
-		b[r] = a[i];
+		b[r] = a[0];
 		Repermutation(a, r + 1, n);
 		Swap(a + 0, a + i);
 	}//for
